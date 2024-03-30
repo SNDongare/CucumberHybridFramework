@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: runner.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 13, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 155.718 s <<< FAILURE! - in runner.TestRunner
+login with valid credentials #2(login functionality)  Time elapsed: 26.229 s  <<< FAILURE!
+java.lang.AssertionError
+
+Register with duplicate email address(User Registration)  Time elapsed: 31.356 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.getText()" because "webElement" is null
+

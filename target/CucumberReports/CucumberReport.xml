@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="13" time="146.012">
+    <testcase classname="login functionality" name="login with valid credentials" time="12.771">
+        <system-out><![CDATA[Given User navigated to login page..........................................passed
+When user enters valid email sachindongare2002@gmail.com address............passed
+And user enters valid Sachin@4467 password..................................passed
+And click on login button...................................................passed
+Then user should be able to successfully login..............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="login functionality" name="login with valid credentials 2" time="26.209">
+        <failure message="" type="java.lang.AssertionError"><![CDATA[Given User navigated to login page..........................................passed
+When user enters valid email sachindongare2003@gmail.com address............passed
+And user enters valid Sachin@4467 password..................................passed
+And click on login button...................................................passed
+Then user should be able to successfully login..............................failed
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at stepdefinitions.Login.user_should_be_able_to_successfully_login(Login.java:50)
+	at ✽.user should be able to successfully login(file:///D:/AppiumFramework/AutomationFramework/com.anandRathi.TutorialsNinjaApp/src/test/resources/features/Login.feature:13)
+]]></failure>
+    </testcase>
+    <testcase classname="login functionality" name="login with Invalid credentials" time="6.047">
+        <system-out><![CDATA[Given User navigated to login page..........................................passed
+When user enters Invalid email address......................................passed
+And user enters Invalid password "Sachin@4467"..............................passed
+And click on login button...................................................passed
+Then user should get proper warning message.................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="login functionality" name="login with valid username and invalid password" time="8.909">
+        <system-out><![CDATA[Given User navigated to login page..........................................passed
+When user enters valid email "sachindongare2002@gmail.com" address..........passed
+And user enters Invalid password "145345"...................................passed
+And click on login button...................................................passed
+Then user should get proper warning message.................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="login functionality" name="login with Invalid username and valid password" time="7.632">
+        <system-out><![CDATA[Given User navigated to login page..........................................passed
+When user enters Invalid email address......................................passed
+And user enters valid "Sachin@4467" password................................passed
+And click on login button...................................................passed
+Then user should get proper warning message.................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="login functionality" name="login without providing any creditials" time="8.212">
+        <system-out><![CDATA[Given User navigated to login page..........................................passed
+When user don’t enters any email address....................................passed
+And user don’t enters any  password.........................................passed
+And click on login button...................................................passed
+Then user should get proper warning message.................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="User Registration" name="Register with manedatory fields" time="10.637">
+        <system-out><![CDATA[Given User navigate to Register account page................................passed
+When User enter the below details into the field............................passed
+And select privacy policy...................................................passed
+And click on continue button................................................passed
+Then Account should get successfully created................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="User Registration" name="Register with All fields" time="9.182">
+        <system-out><![CDATA[Given User navigate to Register account page................................passed
+When User enter the below details into the field............................passed
+And Select Yes for Newslatter...............................................passed
+And select privacy policy...................................................passed
+And click on continue button................................................passed
+Then Account should get successfully created................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="User Registration" name="Register without providing any fields" time="8.459">
+        <system-out><![CDATA[Given User navigate to Register account page................................passed
+Given User navigate to Register account page................................passed
+When User dont enters details into the any fields...........................passed
+And click on continue button................................................passed
+Then warning messages should be displayed under all mandatory fields........passed
+]]></system-out>
+    </testcase>
+    <testcase classname="User Registration" name="Register with duplicate email address" time="31.338">
+        <failure message="Cannot invoke &quot;org.openqa.selenium.WebElement.getText()&quot; because &quot;webElement&quot; is null" type="java.lang.NullPointerException"><![CDATA[Given User navigate to Register account page................................passed
+When User enter the below details into the field............................passed
+And Select Yes for Newslatter...............................................passed
+And select privacy policy...................................................passed
+And click on continue button................................................passed
+Then warning message informing to the user about duplicate email address....failed
+
+StackTrace:
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.getText()" because "webElement" is null
+	at utils.ElementsUtils.getTextValueFromWebElement(ElementsUtils.java:123)
+	at pages.RegisterPage.retriveDuplicateEmailWarningMessage(RegisterPage.java:132)
+	at stepdefinitions.Registration.warning_message_informing_to_the_user_about_duplicate_email_address(Registration.java:84)
+	at ✽.warning message informing to the user about duplicate email address(file:///D:/AppiumFramework/AutomationFramework/com.anandRathi.TutorialsNinjaApp/src/test/resources/features/Registration.feature:62)
+]]></failure>
+    </testcase>
+    <testcase classname="Search functionality" name="Search for the valid product" time="5.214">
+        <system-out><![CDATA[Given user opens the application............................................passed
+When user enter valid product "HP" into the search field....................passed
+And user click on search button.............................................passed
+Then valid product should get displayed in search result....................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Search functionality" name="Search for the non existing product" time="5.945">
+        <system-out><![CDATA[Given user opens the application............................................passed
+When user enter non existing product into the search field "Honda"..........passed
+And user click on search button.............................................passed
+Then proper text formating the user about no product matching should be displayed.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Search functionality" name="Search without providing any product" time="4.967">
+        <system-out><![CDATA[Given user opens the application............................................passed
+When user dont enter product into the search field..........................passed
+And user click on search button.............................................passed
+Then proper text formating the user about no product matching should be displayed.passed
+]]></system-out>
+    </testcase>
+</testsuite>
